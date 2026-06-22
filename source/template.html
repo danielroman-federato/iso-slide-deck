@@ -321,11 +321,11 @@
   </section>
 
   <!-- ══════════════════ AGENDA ══════════════════ -->
-  <section data-label="Walkthrough" data-speaker-notes="The map: eight screens across six stages of ERC integration. Ingest the bureau delivery, onboard the customer (carrier or MGA) and scope what ISO content they are licensed to consume, calibrate deviations against the algorithm view, inspect the loaded content, run quote-to-bind grounded in bureau rules, then adopt incoming circulars." style="box-sizing:border-box;background:#F4F0E8;color:#35231F;font-family:'Schibsted Grotesk',sans-serif;padding:72px 88px;display:flex;flex-direction:column;">
+  <section data-label="Walkthrough" data-speaker-notes="The map: eight screens across seven stages of ERC integration. Ingest the bureau delivery, onboard the customer (carrier or MGA), calibrate deviations against the algorithm view, inspect the loaded content, run quote-to-bind grounded in bureau rules, then enforce the ISO licensing gate that sits underneath everything, and finally adopt incoming circulars." style="box-sizing:border-box;background:#F4F0E8;color:#35231F;font-family:'Schibsted Grotesk',sans-serif;padding:72px 88px;display:flex;flex-direction:column;">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;">
       <div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:0.16em;color:#8A5634;font-weight:500;margin-bottom:12px;">THE WALKTHROUGH</div>
-        <h2 style="font-size:52px;font-weight:700;letter-spacing:-0.025em;line-height:1;">Six stages of ERC integration</h2>
+        <h2 style="font-size:52px;font-weight:700;letter-spacing:-0.025em;line-height:1;">Seven stages of ERC integration</h2>
       </div>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.1em;color:#A2978C;text-align:right;">RAW ISO DELIVERY<br>→ BOUND POLICY</div>
     </div>
@@ -341,10 +341,9 @@
 
       <div class="c45"></div>
       <div class="c39">
-        <div style="width:210px;flex:none;"><div class="c26">CUSTOMER INTEGRATION</div><div class="c34">Onboarding &amp; licensing</div></div>
+        <div style="width:210px;flex:none;"><div class="c26">CUSTOMER INTEGRATION</div><div class="c34">Onboarding</div></div>
         <div class="c41">
           <div class="c16"><div class="c29"><span class="c33">Customer Workspace</span></div><div class="c31">Onboard a customer (carrier or MGA) and scope every action to them</div></div>
-          <div class="c16"><div class="c29"><span class="c33">ISO Permissions</span></div><div class="c31">Master CLM agreement plus per-carrier LOB × service × jurisdiction licensing gate</div></div>
         </div>
       </div>
 
@@ -370,6 +369,14 @@
         <div style="width:210px;flex:none;"><div class="c26">QUOTE → BIND</div><div class="c34">Bureau content in production</div></div>
         <div class="c41">
           <div class="c16"><div class="c29"><span class="c33">Bureau-grounded issuance</span></div><div class="c31">Every premium, attached form and bound record traceable to the bureau rule that drove it</div></div>
+        </div>
+      </div>
+
+      <div class="c45"></div>
+      <div class="c39">
+        <div style="width:210px;flex:none;"><div class="c26">LICENSING</div><div class="c34">Content gate</div></div>
+        <div class="c41">
+          <div class="c16"><div class="c29"><span class="c33">ISO Permissions</span></div><div class="c31">Master CLM agreement plus per-carrier LOB × service × jurisdiction licensing gate</div></div>
         </div>
       </div>
 
@@ -472,53 +479,6 @@
           <div class="c2"><span class="c12">→</span><div><span class="c5">Multi-customer deployments scale</span> — engineering stops being the bottleneck for new customers, new states, new products</div></div>
           <div class="c2"><span class="c12">→</span><div><span class="c5">Every action is correctly scoped</span> — the platform always knows which customer, paper company and product is active</div></div>
           <div class="c2"><span class="c12">→</span><div><span class="c5">Product launches become configuration changes</span> — not engineering projects</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="c8">
-      <span>FEDERATO · ISO ERC 2.0</span><span>PROTOTYPE WALKTHROUGH</span>
-    </div>
-  </section>
-
-  <!-- ══════════════════ ISO PERMISSIONS ══════════════════ -->
-  <section data-label="ISO Permissions" data-speaker-notes="ISO Permissions is the contractual licensing gate. Every carrier signs a master Commercial Lines Manual agreement with Verisk that scopes redistribution rights down to the line of business, the service (forms, loss costs, rules) and the jurisdiction. Today that scope lives in legal spreadsheets, disconnected from the engine — so the engine has no way to refuse content the carrier is not entitled to consume, and no way to stop surfacing bureau rates and forms when the agreement lapses. This screen brings the gate into the system: a master agreement record, a per-carrier matrix of 14 LOBs × 3 services × 53 jurisdictions, and a two-gate enforcement model where both the agreement and the cell must pass before any ISO content reaches a quote." class="c6">
-    <div class="c22">
-      <div>
-        <h2 class="c20">ISO Permissions</h2>
-      </div>
-      <span class="c1">LICENSING</span>
-    </div>
-    <div class="c9">
-      <div class="c19">
-        <div class="c3">BUILT FOR</div>
-        <div class="c28">
-          <div class="c2"><span class="c13">●</span>Compliance and legal owning the master CLM agreement with Verisk</div>
-          <div class="c2"><span class="c13">●</span>Engineers onboarding a carrier and scoping its bureau content rights</div>
-          <div class="c2"><span class="c13">●</span>Forms and actuarial teams when a cell goes dark and content disappears</div>
-        </div>
-      </div>
-      <div class="c23">
-        <div class="c3">THE PROBLEM</div>
-        <p class="c42">ISO content is licensed, not free. Every carrier signs a Commercial Lines Manual agreement with Verisk that scopes redistribution rights to the LOB, the service and the state. Today that licensed scope lives in legal spreadsheets — the rating engine has no way to refuse content the carrier is not entitled to consume, and no way to stop surfacing bureau rates and forms when the agreement lapses. That is a contract risk the platform owes the customer to remove.</p>
-      </div>
-      <div class="c4">
-        <div class="c24">WHAT THE PROTOTYPE DOES</div>
-        <div class="c32">
-          <div class="c14"><span class="c0"></span><div><span class="c7">Master CLM agreement record</span> — in-place flag, as-of and expiration dates, uploaded agreement file, computed status badge per carrier</div></div>
-          <div class="c14"><span class="c0"></span><div><span class="c7">Per-carrier 2,226-cell matrix</span> — 14 ISO LOBs × 3 services (forms, loss costs, rules) × 53 jurisdictions, every cell independently toggleable</div></div>
-          <div class="c14"><span class="c0"></span><div><span class="c7">Sliced editor</span> — pick an LOB and a service, flip rights across all jurisdictions at once, instead of facing a wall of 2,226 cells</div></div>
-          <div class="c14"><span class="c0"></span><div><span class="c7">Two-gate enforcement</span> — agreement gate AND matrix gate, both must pass for ISO content to surface anywhere in the app</div></div>
-          <div class="c14"><span class="c0"></span><div><span class="c7">Draft, dirty and save</span> — stage a full set of changes before committing, with an explicit dirty indicator for compliance review</div></div>
-        </div>
-      </div>
-      <div class="c15">
-        <div class="c25">WHAT THIS MEANS IN PRACTICE</div>
-        <div class="c27">
-          <div class="c2"><span class="c12">→</span><div><span class="c5">The engine refuses content the carrier is not licensed to consume</span> — contract enforcement becomes systemic, not aspirational</div></div>
-          <div class="c2"><span class="c12">→</span><div><span class="c5">An expired CLM stops bureau content at the gate</span> — no quietly issuing forms past the agreement expiration date</div></div>
-          <div class="c2"><span class="c12">→</span><div><span class="c5">Compliance sees, in one place, exactly what every carrier is licensed for</span> — no more chasing legal spreadsheets</div></div>
-          <div class="c2"><span class="c12">→</span><div><span class="c5">Adding a new licensed LOB is a UI action with an audit trail</span> — not a code change buried in Python</div></div>
-          <div class="c2"><span class="c12">→</span><div><span class="c5">The same gate extends to every line</span> — the customer signs an amendment, compliance flips the cells, the engine respects it</div></div>
         </div>
       </div>
     </div>
@@ -710,6 +670,53 @@
           <div class="c2"><span class="c12">→</span><div><span class="c5">Every attached form has a reason traceable to a bureau rule</span> — agents and insureds get a defensible form list, not a black-box list</div></div>
           <div class="c2"><span class="c12">→</span><div><span class="c5">Input changes show what moves before commit</span> — no post-bind surprises, no reconciliation calls</div></div>
           <div class="c2"><span class="c12">→</span><div><span class="c5">Endorsements and renewals work from the same ground truth</span> — the bound policy stays tied to the exact content it rated against</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="c8">
+      <span>FEDERATO · ISO ERC 2.0</span><span>PROTOTYPE WALKTHROUGH</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════ ISO PERMISSIONS ══════════════════ -->
+  <section data-label="ISO Permissions" data-speaker-notes="ISO Permissions is the contractual licensing gate that sits underneath everything you just saw. Every carrier signs a master Commercial Lines Manual agreement with Verisk that scopes redistribution rights down to the line of business, the service (forms, loss costs, rules) and the jurisdiction. Today that scope lives in legal spreadsheets, disconnected from the engine — so the engine has no way to refuse content the carrier is not entitled to consume, and no way to stop surfacing bureau rates and forms when the agreement lapses. This screen brings the gate into the system: a master agreement record, a per-carrier matrix of 14 LOBs × 3 services × 53 jurisdictions, and a two-gate enforcement model where both the agreement and the cell must pass before any ISO content reaches a quote." class="c6">
+    <div class="c22">
+      <div>
+        <h2 class="c20">ISO Permissions</h2>
+      </div>
+      <span class="c1">LICENSING</span>
+    </div>
+    <div class="c9">
+      <div class="c19">
+        <div class="c3">BUILT FOR</div>
+        <div class="c28">
+          <div class="c2"><span class="c13">●</span>Compliance and legal owning the master CLM agreement with Verisk</div>
+          <div class="c2"><span class="c13">●</span>Engineers onboarding a carrier and scoping its bureau content rights</div>
+          <div class="c2"><span class="c13">●</span>Forms and actuarial teams when a cell goes dark and content disappears</div>
+        </div>
+      </div>
+      <div class="c23">
+        <div class="c3">THE PROBLEM</div>
+        <p class="c42">ISO content is licensed, not free. Every carrier signs a Commercial Lines Manual agreement with Verisk that scopes redistribution rights to the LOB, the service and the state. Today that licensed scope lives in legal spreadsheets — the rating engine has no way to refuse content the carrier is not entitled to consume, and no way to stop surfacing bureau rates and forms when the agreement lapses. That is a contract risk the platform owes the customer to remove.</p>
+      </div>
+      <div class="c4">
+        <div class="c24">WHAT THE PROTOTYPE DOES</div>
+        <div class="c32">
+          <div class="c14"><span class="c0"></span><div><span class="c7">Master CLM agreement record</span> — in-place flag, as-of and expiration dates, uploaded agreement file, computed status badge per carrier</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Per-carrier 2,226-cell matrix</span> — 14 ISO LOBs × 3 services (forms, loss costs, rules) × 53 jurisdictions, every cell independently toggleable</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Sliced editor</span> — pick an LOB and a service, flip rights across all jurisdictions at once, instead of facing a wall of 2,226 cells</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Two-gate enforcement</span> — agreement gate AND matrix gate, both must pass for ISO content to surface anywhere in the app</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Draft, dirty and save</span> — stage a full set of changes before committing, with an explicit dirty indicator for compliance review</div></div>
+        </div>
+      </div>
+      <div class="c15">
+        <div class="c25">WHAT THIS MEANS IN PRACTICE</div>
+        <div class="c27">
+          <div class="c2"><span class="c12">→</span><div><span class="c5">The engine refuses content the carrier is not licensed to consume</span> — contract enforcement becomes systemic, not aspirational</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">An expired CLM stops bureau content at the gate</span> — no quietly issuing forms past the agreement expiration date</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">Compliance sees, in one place, exactly what every carrier is licensed for</span> — no more chasing legal spreadsheets</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">Adding a new licensed LOB is a UI action with an audit trail</span> — not a code change buried in Python</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">The same gate extends to every line</span> — the customer signs an amendment, compliance flips the cells, the engine respects it</div></div>
         </div>
       </div>
     </div>

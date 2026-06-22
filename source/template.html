@@ -679,7 +679,7 @@
   </section>
 
   <!-- ══════════════════ ISO PERMISSIONS ══════════════════ -->
-  <section data-label="ISO Permissions" data-speaker-notes="ISO Permissions is the contractual licensing gate that sits underneath everything you just saw. Every carrier signs a master Commercial Lines Manual agreement with Verisk that scopes redistribution rights down to the line of business, the service (forms, loss costs, rules) and the jurisdiction. Today that scope lives in legal spreadsheets, disconnected from the engine — so the engine has no way to refuse content the carrier is not entitled to consume, and no way to stop surfacing bureau rates and forms when the agreement lapses. This screen brings the gate into the system: a master agreement record, a per-carrier matrix of 14 LOBs × 3 services × 53 jurisdictions, and a two-gate enforcement model where both the agreement and the cell must pass before any ISO content reaches a quote." class="c6">
+  <section data-label="ISO Permissions" data-speaker-notes="ISO Permissions is the contractual licensing gate that sits underneath everything you just saw. Every carrier signs an ISO Content Licensing Agreement with Verisk that scopes redistribution rights down to the line of business, the service (forms, loss costs, rules) and the jurisdiction. Today that scope lives in legal spreadsheets, disconnected from the engine — so the engine has no way to refuse content the carrier is not entitled to consume, and no way to stop surfacing bureau rates and forms when the agreement lapses. This screen brings the gate into the system: a master agreement record, a per-carrier matrix of 14 LOBs × 3 services × 53 jurisdictions, and a two-gate enforcement model where both the agreement and the cell must pass before any ISO content reaches a quote." class="c6">
     <div class="c22">
       <div>
         <h2 class="c20">ISO Permissions</h2>
@@ -690,19 +690,19 @@
       <div class="c19">
         <div class="c3">BUILT FOR</div>
         <div class="c28">
-          <div class="c2"><span class="c13">●</span>FDEs configuring the carrier's master CLM agreement with Verisk</div>
+          <div class="c2"><span class="c13">●</span>FDEs configuring the carrier's ISO Content Licensing Agreement with Verisk</div>
           <div class="c2"><span class="c13">●</span>Engineers onboarding a carrier and scoping its bureau content rights</div>
           <div class="c2"><span class="c13">●</span>Forms and actuarial teams when a cell goes dark and content disappears</div>
         </div>
       </div>
       <div class="c23">
         <div class="c3">THE PROBLEM</div>
-        <p class="c42">ISO content is licensed, not free. Every carrier signs a Commercial Lines Manual agreement with Verisk that scopes redistribution rights to the LOB, the service and the state. Today that licensed scope lives in legal spreadsheets — the rating engine has no way to refuse content the carrier is not entitled to consume, and no way to stop surfacing bureau rates and forms when the agreement lapses. That is a contract risk the platform owes the customer to remove.</p>
+        <p class="c42">ISO content is licensed, not free. Every carrier signs an ISO Content Licensing Agreement with Verisk that scopes redistribution rights to the LOB, the service and the state. Today that licensed scope lives in legal spreadsheets — the rating engine has no way to refuse content the carrier is not entitled to consume, and no way to stop surfacing bureau rates and forms when the agreement lapses. That is a contract risk the platform owes the customer to remove.</p>
       </div>
       <div class="c4">
         <div class="c24">WHAT THE PROTOTYPE DOES</div>
         <div class="c32">
-          <div class="c14"><span class="c0"></span><div><span class="c7">Master CLM agreement record</span> — in-place flag, as-of and expiration dates, uploaded agreement file, computed status badge per carrier</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">ISO Content Licensing Agreement record</span> — in-place flag, as-of and expiration dates, uploaded agreement file, computed status badge per carrier</div></div>
           <div class="c14"><span class="c0"></span><div><span class="c7">Per-carrier 2,226-cell matrix</span> — 14 ISO LOBs × 3 services (forms, loss costs, rules) × 53 jurisdictions, every cell independently toggleable</div></div>
           <div class="c14"><span class="c0"></span><div><span class="c7">Sliced editor</span> — pick an LOB and a service, flip rights across all jurisdictions at once, instead of facing a wall of 2,226 cells</div></div>
           <div class="c14"><span class="c0"></span><div><span class="c7">Two-gate enforcement</span> — agreement gate AND matrix gate, both must pass for ISO content to surface anywhere in the app</div></div>
@@ -713,7 +713,7 @@
         <div class="c25">WHAT THIS MEANS IN PRACTICE</div>
         <div class="c27">
           <div class="c2"><span class="c12">→</span><div><span class="c5">The engine refuses content the carrier is not licensed to consume</span> — contract enforcement becomes systemic, not aspirational</div></div>
-          <div class="c2"><span class="c12">→</span><div><span class="c5">An expired CLM stops bureau content at the gate</span> — no quietly issuing forms past the agreement expiration date</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">An expired ISO Content Licensing Agreement stops bureau content at the gate</span> — no quietly issuing forms past the expiration date</div></div>
           <div class="c2"><span class="c12">→</span><div><span class="c5">FDEs see, in one place, exactly what every carrier is licensed for</span> — no more chasing legal spreadsheets</div></div>
           <div class="c2"><span class="c12">→</span><div><span class="c5">Adding a new licensed LOB is a UI action with an audit trail</span> — not a code change buried in Python</div></div>
           <div class="c2"><span class="c12">→</span><div><span class="c5">The same gate extends to every line</span> — the customer signs an amendment, the FDE flips the cells, the engine respects it</div></div>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commercial Property ERC Hierarchy - Illustrative</title>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap");
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;background:#35231F;color:#F2EADE;font-family:"Schibsted Grotesk",Arial,sans-serif}
+  .slide{width:1920px;height:1080px;background:#35231F;padding:56px 84px;display:flex;flex-direction:column;overflow:hidden}
+  .top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.18em;color:#20DFA6;font-weight:500;margin-bottom:10px}
+  h1{font-size:48px;line-height:1;font-weight:700;letter-spacing:-.025em;margin:0}
+  .ref{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;color:#A08B79;text-align:right}
+  .grid{flex:1;display:grid;grid-template-columns:1fr 1.52fr .82fr;gap:20px;min-height:0}
+  .panel{background:rgba(242,234,222,.045);border:1px solid rgba(242,234,222,.12);border-radius:14px;padding:20px;min-height:0}
+  .title{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.18em;color:#20DFA6;font-weight:600;margin-bottom:15px}
+  .note{border:1px dashed rgba(32,223,166,.38);border-radius:12px;padding:14px 16px;background:rgba(32,223,166,.06);font-size:15px;line-height:1.4;color:#C9B6A6;margin-bottom:14px}
+  .cards{display:flex;flex-direction:column;gap:11px}
+  .card{border-left:2px solid rgba(32,223,166,.45);padding-left:13px}
+  .card b{display:block;font-size:18px;margin-bottom:3px}
+  .card span{display:block;font-size:13.5px;line-height:1.34;color:#A08B79}
+  .root{border:1px solid rgba(32,223,166,.45);background:rgba(32,223,166,.1);border-radius:12px;padding:17px 20px;text-align:center;margin-bottom:14px}
+  .root .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;color:#20DFA6;margin-bottom:7px}
+  .root .v{font-size:30px;font-weight:700}
+  .prop-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;gap:12px;height:calc(100% - 105px)}
+  .location{grid-column:1 / span 2;border:1px solid rgba(242,234,222,.14);background:rgba(255,255,255,.04);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:center}
+  .location h2{font-size:23px;margin:0}
+  .location p{font-size:13px;line-height:1.3;color:#A08B79;margin:0}
+  .mini{border-radius:10px;padding:11px 12px;background:rgba(242,234,222,.07);border:1px solid rgba(242,234,222,.12)}
+  .mini b{display:block;font-size:15.5px;margin-bottom:3px}
+  .mini span{display:block;font-size:12px;line-height:1.25;color:#A08B79}
+  .branch{border:1px solid rgba(242,234,222,.14);background:rgba(255,255,255,.04);border-radius:14px;padding:15px;display:flex;flex-direction:column;min-width:0}
+  .branch h2{font-size:23px;line-height:1.05;margin:0 0 5px}
+  .branch p{font-size:12.8px;line-height:1.28;color:#A08B79;margin:0 0 12px;min-height:48px}
+  .node-stack{display:flex;flex-direction:column;gap:9px;flex:1}
+  .node{border-radius:10px;padding:12px 13px;background:rgba(242,234,222,.07);border:1px solid rgba(242,234,222,.12)}
+  .node.accent{border-color:rgba(32,223,166,.32);background:rgba(32,223,166,.07)}
+  .node b{display:block;font-size:16.5px;margin-bottom:3px}
+  .node span{display:block;font-size:12px;line-height:1.25;color:#A08B79}
+  .steps{display:flex;flex-direction:column;gap:11px}
+  .step{display:grid;grid-template-columns:32px 1fr;gap:10px;padding-bottom:11px;border-bottom:1px solid rgba(242,234,222,.09)}
+  .num{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(32,223,166,.42);color:#20DFA6;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600}
+  .step b{display:block;font-size:17px;margin-bottom:2px}
+  .step span{display:block;font-size:13px;line-height:1.3;color:#A08B79}
+  .result{margin-top:14px;display:grid;grid-template-columns:86px 1fr;border:1px solid rgba(242,234,222,.12);border-radius:12px;overflow:hidden;background:rgba(242,234,222,.035)}
+  .result b{display:flex;align-items:center;justify-content:center;background:rgba(32,223,166,.08);border-right:1px solid rgba(242,234,222,.1);font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.15em;color:#20DFA6;text-align:center;padding:0 8px}
+  .result span{padding:12px 14px;font-size:13.5px;line-height:1.32;color:#C9B6A6}
+  .footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;color:#B0A498}
+</style>
+</head>
+<body>
+<section class="slide" aria-label="Commercial Property illustrative ERC hierarchy">
+  <div class="top">
+    <div>
+      <div class="eyebrow">FUTURE LOB ILLUSTRATION - COMMERCIAL PROPERTY</div>
+      <h1>Commercial Property hierarchy concept</h1>
+    </div>
+    <div class="ref">VERISK ERC PRODUCT GUIDE V6<br>COMMERCIAL PROPERTY HIERARCHY - PAGE 66</div>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <div class="title">ASSUMPTION FRAME</div>
+      <div class="note">Illustrative only: no Commercial Property ERC files are loaded in this PoC. The labels follow the Product Guide page 66 hierarchy at a high level.</div>
+      <div class="cards">
+        <div class="card"><b>Same ERC spine</b><span>Delivery intake, edition registry, activation gate, rate/forms/rules axes, trace events, and audit package still apply.</span></div>
+        <div class="card"><b>Property-specific shape</b><span>The hierarchy branches by location into structure, occupancy, business income, personal property, and special classes.</span></div>
+        <div class="card"><b>Exposure base changes</b><span>Rating depends on values, construction, protection, occupancy, causes of loss, coinsurance, deductibles, and limits.</span></div>
+        <div class="card"><b>Implementation gap</b><span>Future work is to load Property DataDefs, tables, rules, forms, and STC cases into the same operating model.</span></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="root"><div class="k">RUNTIME ROOT</div><div class="v">Commercial Property Quote or Policy</div></div>
+      <div class="prop-grid">
+        <div class="location">
+          <div><h2>Commercial Property Location</h2><p>Location is the main container for buildings, occupancies, property values, and coverage schedules.</p></div>
+          <div class="mini"><b>Coverages</b><span>Location-level coverage selections and limits.</span></div>
+          <div class="mini"><b>Forms / Schedule</b><span>Location forms, building schedules, and rating modifiers.</span></div>
+        </div>
+        <div class="branch">
+          <h2>Structure / Occupancy</h2>
+          <p>Building and occupancy attributes drive many property rate keys.</p>
+          <div class="node-stack">
+            <div class="node accent"><b>Structure</b><span>Construction, protection, territory, sprinkler, stories, area, roof, year built.</span></div>
+            <div class="node"><b>Occupancy</b><span>Occupancy class, mercantile/service/office attributes, exposure conditions.</span></div>
+            <div class="node"><b>Coverages</b><span>Building, ordinance or law, causes of loss, limits, deductibles, coinsurance.</span></div>
+            <div class="node"><b>Forms / Schedule</b><span>Building endorsements, protective safeguards, schedule credits/debits.</span></div>
+          </div>
+        </div>
+        <div class="branch">
+          <h2>Property sub-lines</h2>
+          <p>Page 66 shows Business Income, Personal Property, and Special Class as separate hierarchy branches.</p>
+          <div class="node-stack">
+            <div class="node accent"><b>Business Income</b><span>Income coverage, period of restoration, extra expense, limits, options.</span></div>
+            <div class="node accent"><b>Personal Property</b><span>BPP values, stock, equipment, valuation, deductibles, causes of loss.</span></div>
+            <div class="node accent"><b>Special Class</b><span>Special property or exposure classes with their own coverages/forms.</span></div>
+            <div class="node"><b>Forms / Schedule</b><span>Each branch can carry its own coverages, forms, and schedule rows.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="title">FUTURE FLOW</div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><b>Load Property ERC</b><span>Parse Property DataDefs, rate tables, rules, domains, forms, metadata, and STC cases.</span></div></div>
+        <div class="step"><div class="num">2</div><div><b>Resolve edition</b><span>Select active Property edition by state, effective date, carrier scope, and filing axis.</span></div></div>
+        <div class="step"><div class="num">3</div><div><b>Normalize locations</b><span>Build location, structure, occupancy, BI, BPP, special class, coverage, and schedule context.</span></div></div>
+        <div class="step"><div class="num">4</div><div><b>Rate branches</b><span>Calculate each property branch and roll values/premium to the location and policy.</span></div></div>
+        <div class="step"><div class="num">5</div><div><b>Attach forms</b><span>Apply forms by policy, location, structure, occupancy, and property sub-line context.</span></div></div>
+      </div>
+      <div class="result"><b>DESIGN<br>GOAL</b><span>Reuse the GL proof spine while replacing the rated object model with Property-specific branches.</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>FEDERATO - ISO ERC 2.0</span><span>STANDALONE SAMPLE - NOT WIRED INTO MAIN DECK</span>
+  </div>
+</section>
+</body>
+</html>

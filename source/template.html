@@ -483,7 +483,7 @@
   </section>
 
   <!-- ══════════════════ SCREEN 01 ══════════════════ -->
-  <section data-label="Ops Dashboard" data-speaker-notes="Ingest is where Federato builds its shared ERC content library — the asset every downstream carrier onboarding subscribes to. Mass ingest with streaming status and STC validation makes each delivery's load repeatable and trustworthy instead of a manual, opaque process." class="c6">
+  <section data-label="Ops Dashboard" data-speaker-notes="Ingest is an internal engineering control surface for proving ISO ERC file ingestion. The point is to build and validate Federato's bureau content library: classify raw files, parse schema, rates, rules and forms, run bureau test cases, surface load failures, and prove the loaded edition is usable before any downstream product workflow depends on it." class="c6">
     <div class="c22">
       <div>
         <h2 class="c20">Ops Dashboard</h2>
@@ -494,36 +494,36 @@
       <div class="c19">
         <div class="c3">BUILT FOR</div>
         <div class="c28">
-          <div class="c2"><span class="c13">●</span>Implementation engineers loading a fresh ISO ERC delivery</div>
-          <div class="c2"><span class="c13">●</span>Data-operations teams running bureau update pipelines</div>
-          <div class="c2"><span class="c13">●</span>Actuaries &amp; PMs validating rates and factors are correct</div>
+          <div class="c2"><span class="c13">●</span>Internal engineers building the ERC content library</div>
+          <div class="c2"><span class="c13">●</span>Data/platform engineers validating parsers and load jobs</div>
+          <div class="c2"><span class="c13">●</span>QA/actuarial reviewers checking bureau test-case parity</div>
         </div>
       </div>
       <div class="c23">
         <div class="c3">THE PROBLEM</div>
-        <p style="font-size:18.5px;line-height:1.46;color:#3A2C24;">ISO delivers rate content state by state. Federato builds a shared library of ingested ERC content — rates, factors, territory definitions, rules, forms and bureau test cases — that every carrier onboarding draws from. Done manually it is error-prone and non-repeatable; done as a managed library it is the asset every downstream stage of integration depends on.</p>
+        <p style="font-size:18.5px;line-height:1.46;color:#3A2C24;">ISO ERC arrives as a multi-file bureau package: schemas, rate tables, domain tables, rules XML, forms metadata and sample test cases. Before this can support any product workflow, engineering needs proof that each delivery can be classified, parsed, loaded and validated repeatably. Manual inspection does not scale; the ingest dashboard is the build-time evidence that the ERC library is structurally sound.</p>
       </div>
       <div class="c4">
         <div class="c24">WHAT THE PROTOTYPE DOES</div>
         <div class="c32">
-          <div class="c14"><span class="c0"></span><div><span class="c7">Mass ingest UI</span> — point at a bureau delivery and see what is loadable before committing</div></div>
-          <div class="c14"><span class="c0"></span><div><span class="c7">Live per-state progress</span> — each delivery's status is visible as it loads, not buried in logs</div></div>
-          <div class="c14"><span class="c0"></span><div><span class="c7">Per-delivery outcomes</span> — what loaded, what failed, what was skipped, with the reasons surfaced</div></div>
-          <div class="c14"><span class="c0"></span><div><span class="c7">Bureau correctness check</span> — the bureau's own test cases run against the loaded content; pass/fail at a glance</div></div>
-          <div class="c14"><span class="c0"></span><div><span class="c7">Active edition view</span> — what is live in each state and when it became effective</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Delivery intake control</span> — point at a bureau folder and preview files, blockers and parse plan before loading</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Pipeline visibility</span> — watch schema, table, rule, form and STC stages complete or fail</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Per-delivery outcomes</span> — what loaded, what failed, what was skipped, with engineering-readable reasons</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Bureau correctness check</span> — bureau STC cases run against loaded content; pass/fail at a glance</div></div>
+          <div class="c14"><span class="c0"></span><div><span class="c7">Loaded edition evidence</span> — which edition was loaded, activated for testing, and tied to source artifacts</div></div>
         </div>
       </div>
       <div class="c15">
         <div class="c25">WHAT THIS MEANS IN PRACTICE</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.18em;color:#A96F47;font-weight:600;margin-bottom:8px;">INITIAL ONBOARDING</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.18em;color:#A96F47;font-weight:600;margin-bottom:8px;">BUILD-TIME PROOF</div>
         <div class="c27">
-          <div class="c2"><span class="c12">→</span><div><span class="c5">A multi-day database wrestle becomes a one-screen workflow</span> — implementation engineers stop firefighting bureau deliveries</div></div>
-          <div class="c2"><span class="c12">→</span><div><span class="c5">New customers onboard against a validated library</span> — not a fresh from-scratch load every time</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">Proof before productization</span> — no quote, form, or audit workflow depends on unproven bureau content</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">Parser defects surface early</span> — schema, table, domain, rule, and STC failures are visible during library build</div></div>
         </div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.18em;color:#A96F47;font-weight:600;margin:14px 0 8px;">LONG-TERM MANAGEMENT</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.18em;color:#A96F47;font-weight:600;margin:14px 0 8px;">LIBRARY READINESS</div>
         <div class="c27">
-          <div class="c2"><span class="c12">→</span><div><span class="c5">One library serves every customer</span> — no per-tenant duplication, no drift between customers</div></div>
-          <div class="c2"><span class="c12">→</span><div><span class="c5">Edition refreshes are routine</span> — anyone sees what is live in each state and as of when, without writing a query</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">Repeatable load evidence</span> — every ERC delivery has a recorded load outcome, blocker list, and validation result</div></div>
+          <div class="c2"><span class="c12">→</span><div><span class="c5">Edition readiness is explicit</span> — engineers can tell what is parsed, validated, and safe to promote</div></div>
         </div>
       </div>
     </div>

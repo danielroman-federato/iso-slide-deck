@@ -1325,7 +1325,7 @@
           </div>
           <div style="display:flex;gap:11px;align-items:flex-start;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;color:#20DFA6;background:rgba(32,223,166,0.10);border:1px solid rgba(32,223,166,0.32);border-radius:3px;padding:2px 7px;flex:none;min-width:26px;text-align:center;letter-spacing:0.04em;margin-top:1px;">03</div>
-            <div style="font-size:13.5px;line-height:1.4;color:#F2EADE;"><span style="font-weight:600;">Filing scope multiplies.</span> <span style="color:#C9B6A6;">Each (writing co. × product × state) is independently filed with its own SERFF tracking number, approval status and potentially its own ERC edition. Tracks drift independently over time.</span></div>
+            <div style="font-size:13.5px;line-height:1.4;color:#F2EADE;"><span style="font-weight:600;">Filing scope multiplies.</span> <span style="color:#C9B6A6;">Each (writing co. × LOB × product × state) is independently filed with its own SERFF tracking number, approval status and ERC edition. Tracks drift independently over time.</span></div>
           </div>
           <div style="display:flex;gap:11px;align-items:flex-start;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;color:#20DFA6;background:rgba(32,223,166,0.10);border:1px solid rgba(32,223,166,0.32);border-radius:3px;padding:2px 7px;flex:none;min-width:26px;text-align:center;letter-spacing:0.04em;margin-top:1px;">04</div>
@@ -1337,7 +1337,7 @@
           </div>
           <div style="display:flex;gap:11px;align-items:flex-start;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;color:#20DFA6;background:rgba(32,223,166,0.10);border:1px solid rgba(32,223,166,0.32);border-radius:3px;padding:2px 7px;flex:none;min-width:26px;text-align:center;letter-spacing:0.04em;margin-top:1px;">06</div>
-            <div style="font-size:13.5px;line-height:1.4;color:#F2EADE;"><span style="font-weight:600;">Edition resolution is per-filing-track.</span> <span style="color:#C9B6A6;">Each (writing co. × product × state) sits on its own rate / forms / rules editions. The split filing-track resolver extends one level deeper than today.</span></div>
+            <div style="font-size:13.5px;line-height:1.4;color:#F2EADE;"><span style="font-weight:600;">Edition resolution is per-filing-track.</span> <span style="color:#C9B6A6;">Each (writing co. × LOB × product × state) sits on its own rate / forms / rules editions — and each ISO LOB ships its own ERC delivery cadence independently.</span></div>
           </div>
           <div style="display:flex;gap:11px;align-items:flex-start;">
             <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;font-weight:600;color:#20DFA6;background:rgba(32,223,166,0.10);border:1px solid rgba(32,223,166,0.32);border-radius:3px;padding:2px 7px;flex:none;min-width:26px;text-align:center;letter-spacing:0.04em;margin-top:1px;">07</div>
@@ -1349,22 +1349,23 @@
       <!-- COL 3 - Scale contrast -->
       <div style="display:flex;flex-direction:column;gap:14px;min-height:0;">
 
-        <div style="background:rgba(32,223,166,0.07);border:1px solid rgba(32,223,166,0.28);border-radius:14px;padding:20px 22px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;color:#20DFA6;font-weight:600;margin-bottom:10px;">ONE BUREAU CORPUS</div>
-          <div style="font-size:36px;font-weight:700;color:#F2EADE;line-height:1;margin-bottom:8px;">1</div>
-          <div style="font-size:13px;color:#A08B79;line-height:1.42;">ISO publishes one ERC delivery per (LOB, jurisdiction, edition). Identical content for every NAIC underneath.</div>
+        <div style="background:rgba(32,223,166,0.07);border:1px solid rgba(32,223,166,0.28);border-radius:14px;padding:18px 22px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;color:#20DFA6;font-weight:600;margin-bottom:8px;">ONE BUREAU CORPUS</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px;"><span style="font-size:34px;font-weight:700;color:#F2EADE;line-height:1;">1</span><span style="font-size:12px;color:#A08B79;">per LOB × jurisdiction × edition</span></div>
+          <div style="font-size:12.5px;color:#A08B79;line-height:1.42;">ISO publishes one ERC delivery per LOB per state per edition. Identical content for every NAIC underneath.</div>
         </div>
 
-        <div style="background:rgba(232,180,122,0.06);border:1px solid rgba(232,180,122,0.28);border-radius:14px;padding:20px 22px;">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;color:#E8B47A;font-weight:600;margin-bottom:10px;">ACME FILING TRACKS</div>
-          <div style="font-size:36px;font-weight:700;color:#F2EADE;line-height:1;margin-bottom:8px;">~200</div>
-          <div style="font-size:13px;color:#A08B79;line-height:1.42;">4 product tracks × 50 states. Each is independently filed with its own SERFF tracking, approval status and edition cadence.</div>
+        <div style="background:rgba(232,180,122,0.06);border:1px solid rgba(232,180,122,0.28);border-radius:14px;padding:18px 22px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;color:#E8B47A;font-weight:600;margin-bottom:8px;">ACME FILING TRACKS</div>
+          <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px;"><span style="font-size:34px;font-weight:700;color:#F2EADE;line-height:1;">~350</span><span style="font-size:12px;color:#A08B79;">writing co. × LOB × product × state</span></div>
+          <div style="font-size:12.5px;color:#A08B79;line-height:1.42;">7 (writing co. × LOB × product) tracks × 50 states. Each independently filed with its own SERFF tracking, approval status and edition cadence.</div>
         </div>
 
-        <div style="background:rgba(242,234,222,0.04);border:1px solid rgba(242,234,222,0.12);border-radius:14px;padding:20px 22px;flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <div style="background:rgba(242,234,222,0.04);border:1px solid rgba(242,234,222,0.12);border-radius:14px;padding:18px 22px;flex:1;display:flex;flex-direction:column;justify-content:center;">
           <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.18em;color:#A08B79;margin-bottom:10px;">WHAT MULTIPLIES</div>
-          <div style="display:flex;flex-direction:column;gap:8px;font-size:12.5px;line-height:1.4;color:#C9B6A6;">
-            <div><span style="color:#F2EADE;font-weight:600;">×</span> SERFF filings per state</div>
+          <div style="display:flex;flex-direction:column;gap:7px;font-size:12.5px;line-height:1.4;color:#C9B6A6;">
+            <div><span style="color:#F2EADE;font-weight:600;">×</span> ISO LOBs per writing co.</div>
+            <div><span style="color:#F2EADE;font-weight:600;">×</span> SERFF filings per (LOB, state)</div>
             <div><span style="color:#F2EADE;font-weight:600;">×</span> CLM licenses per writing co.</div>
             <div><span style="color:#F2EADE;font-weight:600;">×</span> State authorizations per NAIC</div>
             <div><span style="color:#F2EADE;font-weight:600;">×</span> Audit-package anchors at bind</div>
@@ -1379,7 +1380,7 @@
     <!-- One-line band -->
     <div style="margin-top:18px;padding:18px 24px;background:rgba(32,223,166,0.08);border:1px solid rgba(32,223,166,0.32);border-radius:12px;display:flex;gap:18px;align-items:center;">
       <div style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.22em;color:#20DFA6;font-weight:600;flex:none;">THE ONE-LINE</div>
-      <div style="font-size:15.5px;line-height:1.5;color:#F2EADE;">The bureau ships <span style="font-weight:600;border-bottom:2px solid rgba(32,223,166,0.55);">one ERC corpus</span>. The carrier consumes it through a <span style="font-weight:600;border-bottom:2px solid rgba(32,223,166,0.55);">tree</span> — parent → writing co. (NAIC) → product → state → edition — and every node above <span style="font-weight:600;border-bottom:2px solid rgba(32,223,166,0.55);">state</span> multiplies the filing, audit and licensing surface while the bureau content underneath stays singular.</div>
+      <div style="font-size:15.5px;line-height:1.5;color:#F2EADE;">The bureau ships <span style="font-weight:600;border-bottom:2px solid rgba(32,223,166,0.55);">one ERC corpus per LOB</span>. The carrier consumes it through a <span style="font-weight:600;border-bottom:2px solid rgba(32,223,166,0.55);">tree</span> — parent → writing co. (NAIC) → ISO LOB → product → state → edition — and every node above <span style="font-weight:600;border-bottom:2px solid rgba(32,223,166,0.55);">state</span> multiplies the filing, audit and licensing surface while the bureau content underneath stays singular.</div>
     </div>
 
     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:#B0A498;">
